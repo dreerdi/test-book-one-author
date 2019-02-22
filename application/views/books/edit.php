@@ -1,6 +1,6 @@
 
 <h2 class="text-center">Редактирование записи</h2>
-<form action="/books/edit/<?php echo $book_id_books; ?>/" method="POST">
+<form action="/books/edit/<?php echo $book_id_books; ?>/" method="POST" id="form_edit">
 	<input class="form-control" value="<?php echo $book_id_books; ?>" type="hidden" id="book_id" name="book_id"><br>
 	<label for="genre">жанр
 		<select class="form-control" name="genre" id="genre">

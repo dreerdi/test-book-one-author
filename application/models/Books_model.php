@@ -8,14 +8,14 @@ class Books_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function getBooks($slug = FALSE)
+	public function getBooks($book_id = FALSE)
 	{
-		if($slug === FALSE) 
+		if($book_id === FALSE) 
 		{
 			$query = $this->db->get('books');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('books', array('book_id' => $slug));
+		$query = $this->db->get_where('books', array('book_id' => $book_id));
 		return $query->row_array();
 	}
 
