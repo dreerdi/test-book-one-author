@@ -28,7 +28,8 @@ class Books_model extends CI_Model
 			'title' => $title,
 			'release_year' => $release_year
 		);
-		return $this->db->insert('books', $data);
+		$this->db->insert('books', $data);
+		return $data['title'];
 	}
 
 	public function updateBook($book_id, $genre_id, $author_id, $title, $release_year)
@@ -40,7 +41,8 @@ class Books_model extends CI_Model
 			'title' => $title,
 			'release_year' => $release_year
 		);
-		return $this->db->update('books', $data, array('book_id' => $book_id));
+		$this->db->update('books', $data, array('book_id' => $book_id));
+		return $data['book_id'];
 	}
 
 	public function deleteBook($book_id)

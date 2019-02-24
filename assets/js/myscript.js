@@ -26,8 +26,9 @@
           url: '/ajax/edit_book',
           type: "POST",
           data: book,
-          success:function(){              
-              alert("Изменения внесены");
+          success:function($data){              
+              alert("Изменения в книгу, с id " + $data + ", внесены");
+              window.location.href = '/books/';
             },
           error:function (xhr, ajaxOptions, thrownError){
               alert(thrownError); 
@@ -41,8 +42,9 @@
           url: '/ajax/create_book',
           type: "POST",
           data: book,
-          success:function(){              
-              alert("Книга добавлена");
+          success:function($data){ 
+              alert("Книга, " + $data + ", добавлена");
+              window.location.href = '/books/';
             },
           error:function (xhr, ajaxOptions, thrownError){
               alert(thrownError); 
