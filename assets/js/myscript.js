@@ -38,6 +38,22 @@
       $("#add_book").click(function (e) {
         e.preventDefault();  
         var book = $("#form_create").serialize();
+        if($("#genre").val()==="") {
+          alert("Выберите жанр!");
+          return false;
+        }
+        if($("#author").val()==="") {
+          alert("Выберите автора!");
+          return false;
+        }
+        if($("#title").val()==="") {
+          alert("Введите название книги!");
+          return false;
+        }
+        if($("#release_year").val()==="") {
+          alert("Введие год издания книги!");
+          return false;
+        }
         $.ajax({
           url: '/ajax/create_book',
           type: "POST",

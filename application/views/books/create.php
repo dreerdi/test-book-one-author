@@ -2,6 +2,7 @@
 <form action="/books/create/" method="POST" id="form_create">
 	<label for="genre">жанр
 		<select class="form-control" name="genre" id="genre">
+			<option value=""></option>
 			<?php foreach ($genres as $key => $value): ?>
 				<option value="<?php echo $value['genre_id']; ?>"><?php echo $value['title']; ?></option>
 			<?php endforeach ?>
@@ -9,6 +10,7 @@
 	</label><br>
 	<label for="author">автор
 		<select class="form-control" name="author" id="author">
+			<option value=""></option>
 			<?php foreach ($authors as $key => $value): ?>
 				<option value="<?php echo $value['author_id']; ?>"><?php echo $value['fio']; ?></option>
 			<?php endforeach ?>
